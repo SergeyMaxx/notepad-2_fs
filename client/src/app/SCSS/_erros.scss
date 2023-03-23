@@ -1,0 +1,23 @@
+.errors {
+  position: absolute;
+  left: 51px;
+  width: 350px;
+  font-family: 'DM Sans', serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  text-shadow: 1px 1px 0 #fad9d9;
+  color: #e72e31;
+  &.errors-name {
+    top: 120px;
+  }
+  &.errors-email {
+    top: 210px;
+  }
+  &.errors-password {
+    top: 300px;
+  }
+  &.errors-login {
+    top: 145px;
+  }
+}

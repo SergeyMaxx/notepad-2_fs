@@ -1,0 +1,129 @@
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.modal-active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 1;
+}
+
+.content {
+  width: 864px;
+  height: 564px;
+  padding: 30px;
+  margin: 120px 16px 0 0;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background: #9AA489;
+  transform: scale(0.5);
+  transition: all 0.2s;
+}
+
+.content-active {
+  transform: scale(1);
+}
+
+.content-header {
+  width: 800px;
+  height: 60px;
+  margin-bottom: 4px;
+  font-family: 'DM Sans', "Segoe UI", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  background: #DCD4AF;
+  border-radius: 8px;
+  border: 2px solid #000;
+  transition: all 0.3s;
+  padding: 20px;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px 5px #796e57;
+  }
+}
+
+.content-body {
+  width: 800px;
+  height: 300px;
+  background: #DCD4AF;
+  margin-top: 28px;
+  border-radius: 8px;
+  font-family: 'DM Sans', "Segoe UI", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
+  border: 2px solid #000;
+  color: rgba(0, 0, 0, 0.66);
+  transition: all 0.3s;
+  padding: 20px;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px 5px #796e57;
+  }
+  &::placeholder {
+    font-weight: 700;
+    font-size: 24px;
+  }
+}
+
+.modal-button {
+  width: 80px;
+  height: 40px;
+  margin-top: 46px;
+  font-family: 'DM Sans', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  border: 2px solid #DCD4AF;
+  border-radius: 8px;
+  background: #076058;
+  color: #DCD4AF;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.46);
+  }
+}
+
+.remaining-header {
+  margin-left: 5px;
+  font-family: 'DM Sans', serif;
+}
+
+.remaining-body {
+  position: absolute;
+  left: 4%;
+  bottom: 95px;
+  font-family: 'DM Sans', serif;
+}
+
+@media (max-width: 900px) {
+  .content {
+    width: 664px;
+    height: 364px;
+  }
+
+  .content-header {
+    width: 600px;
+    height: 40px;
+  }
+
+  .content-body {
+    width: 600px;
+    height: 120px;
+  }
+}
