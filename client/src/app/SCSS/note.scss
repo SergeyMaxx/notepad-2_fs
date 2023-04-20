@@ -342,8 +342,8 @@
   }
   &__wrapper {
     flex-grow: 1;
-    height: 714px;
-    padding: 34px 46px 0;
+    height: 852px;
+    padding: 34px 46px 24px;
   }
   &__container {
     display: flex;
@@ -392,6 +392,7 @@
       border: 1px solid #000;
       border-radius: 25px;
       box-sizing: content-box;
+      cursor: pointer;
       transition: all 0.3s;
       &:hover {
         box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.46),
@@ -509,9 +510,9 @@
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    height: 714px;
+    min-height: 714px;
     box-sizing: content-box;
-    column-gap: 31px;
+    column-gap: 27px;
     row-gap: 30px;
     &_item {
       position: relative;
@@ -630,6 +631,7 @@
 
 /*============< notePage >==============*/
 .page {
+  height: 700px;
   padding: 0 20px 20px;
 }
 .note-page {
