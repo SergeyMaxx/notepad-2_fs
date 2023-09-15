@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
-import pen from '../../../icons/pen.svg'
+import pen from '../../../assets/pen.svg'
 import {useDispatch, useSelector} from 'react-redux'
 import {getUserId} from '../../services/localStorage.service'
 import {
@@ -11,6 +11,7 @@ import {
   updateUserAvatar,
   updateUserName
 } from '../../Store/auth'
+import Button from '../button'
 
 const EditUserPage = ({active, setActive}) => {
   const [editName, setEditName] = useState(false)
@@ -48,9 +49,7 @@ const EditUserPage = ({active, setActive}) => {
   }
 
   useEffect(() => {
-    if (flag) {
-      dispatch(logOut())
-    }
+    flag && dispatch(logOut())
   }, [flag])
 
   const handelCancel = e => {
@@ -70,17 +69,19 @@ const EditUserPage = ({active, setActive}) => {
         className={active ? 'user-page user-page-active' : 'user-page'}
         onClick={handelCancel}
       >
-        <img
-          className={'avatar-edit' + (editAvatar ? ' hide' : '')}
-          onClick={() => setEdiAvatar(!editAvatar)}
-          src={pen}
-          alt="pen logo"
-        />
-        {editAvatar &&
-          <button className="profile-save avatar-save" onClick={handleSaveAvatar}>
-            change
-          </button>
-        }
+        <div className="avatar-edit-wrap">
+          {editAvatar &&
+            <button className="avatar-edit-button" onClick={handleSaveAvatar}>
+              change
+            </button>
+          }
+          <img
+            className={'avatar-edit' + (editAvatar ? ' hide' : '')}
+            onClick={() => setEdiAvatar(!editAvatar)}
+            src={pen}
+            alt="pen logo"
+          />
+        </div>
         <img
           className="user-page-avatar"
           src={currentUser.image}
@@ -88,18 +89,18 @@ const EditUserPage = ({active, setActive}) => {
         />
         <div className="profile-name">
           {editName
-            ? (<form className="profile-container" onSubmit={handleSaveName}>
-              <input
-                className="profile-input"
-                name="name"
-                type="text"
-                value={edit.toString()}
-                onChange={e => setEdit(e.target.value)}
-              />
-              <button className="profile-save" type="submit">
-                save
-              </button>
-            </form>)
+            ? (
+              <form className="profile-container" onSubmit={handleSaveName}>
+                <input
+                  className="profile-input"
+                  name="name"
+                  type="text"
+                  value={edit.toString()}
+                  onChange={e => setEdit(e.target.value)}
+                />
+                <Button buttonText="save"/>
+              </form>
+            )
             : currentUser.name
           }
           <img
@@ -115,21 +116,21 @@ const EditUserPage = ({active, setActive}) => {
         <div className="danger-zone" onClick={() => setDangerZone(true)}>
           {dangerZone
             ?
-            (<form className="profile-container" onSubmit={handleDeleteAccount}>
-              <div>Please type your name to confirm</div>
-              <input
-                className="profile-input"
-                name="remove"
-                type="text"
-                onChange={e => setUserDelete(e.target.value)}
-              />
-              <button
-                className={'profile-save ' + (userDelete ? 'danger-active' : 'danger')}
-                type="submit"
-              >
-                I understand the consequences, delete this account
-              </button>
-            </form>)
+            (
+              <form className="profile-container" onSubmit={handleDeleteAccount}>
+                <div>Please type your name to confirm</div>
+                <input
+                  className="profile-input"
+                  name="remove"
+                  type="text"
+                  onChange={e => setUserDelete(e.target.value)}
+                />
+                <Button
+                  buttonText="I understand the consequences, delete this account"
+                  addClass={userDelete === currentUser.name ? 'danger-active' : 'danger'}
+                />
+              </form>
+            )
             : <div>Danger Zone</div>
           }
         </div>

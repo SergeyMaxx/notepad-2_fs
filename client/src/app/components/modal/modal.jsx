@@ -11,7 +11,7 @@ const Modal = ({active, setActive}) => {
   const dispatch = useDispatch()
 
   const addNote = (userInput, userInputHeader) => {
-    if (userInput || userInputHeader) {
+    if (userInput.trim() || userInputHeader.trim()) {
       dispatch(createNote({
         id: Math.random().toString(36).slice(2),
         header: userInputHeader,

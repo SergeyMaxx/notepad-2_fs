@@ -1,0 +1,105 @@
+.menu-icon {
+  width: 35px;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #515152;
+  margin: 6px 0 0 0;
+  transition: 0.4s;
+  z-index: 2;
+  position: relative;
+}
+
+.bar1 {
+  margin: 0;
+}
+
+.bar-dark {
+  background: #DCD4AF;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 7px);
+  transform: rotate(-45deg) translate(-9px, 7px);
+  z-index: 2;
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -7px);
+  transform: rotate(45deg) translate(-8px, -7px);
+  z-index: 2;
+}
+
+.open .navigation {
+  width: 272px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 0;
+  height: 100%;
+  background-color: #b6ae84;
+  border-right: 1px solid #000;
+  overflow: hidden;
+  color: white;
+  padding: 200px 0 38px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: fixed;
+  transition: 0.2s;
+  box-shadow: inset 4px 4px 15px #26251c, inset -7px -7px 15px 4px #f6ebb4;
+}
+
+.link {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  font-family: "Segoe UI Light", sans-serif;
+  padding:8px 8px 8px 13px;
+  margin: 10px 35px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #515152;
+  transition: all 0.3s ease-out;
+  border: none;
+  background: #b6ae84;
+  font-weight: 900;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px #e7dfa7;
+}
+
+.link:hover {
+  color: white;
+  text-shadow: 0 0 7px #000000;
+}
+
+.navigation .end-nav {
+  top: 0;
+  right: 25px;
+  margin-left: 30px;
+  font-size: 24px;
+  position: absolute;
+}
+
+.folder {
+  margin-right: 20px;
+}
+
+.on {
+  width: 34px;
+  height: 34px;
+}
+
+.trash {
+  width: 28px;
+  height: 34px;
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
-import TrashList from '../components/trashList'
+import TrashList from '../components/lists/trashList'
 import DeletedNotePage from '../components/pages/deletedNotePage'
 import NoteLayoutsField from '../components/form/noteLayoutsField'
 

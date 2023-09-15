@@ -2,29 +2,23 @@ import React from 'react'
 import {Link, useHistory} from 'react-router-dom'
 import Settings from './settings'
 import NavProfile from './navProfile'
-import {getDarkMode, openSettings} from '../Store/notes'
+import {getDarkMode} from '../Store/notes'
 import {useDispatch, useSelector} from 'react-redux'
 import {getIsLoggedIn} from '../Store/auth'
+import {handelCancel} from '../utils/settingsOff'
 
 const NavBar = () => {
-  const history = useHistory()
   const isLoggedIn = useSelector(getIsLoggedIn())
-  const dispatch = useDispatch()
   const darkMode = useSelector(getDarkMode())
-
-  const handelCancel = e => {
-    if (e.target.classList.contains('nav') ||
-      e.target.classList.contains('nav-row')) {
-      dispatch(openSettings({status: false}))
-    }
-  }
+  const dispatch = useDispatch()
+  const history = useHistory()
 
   return (
     <nav
       className={'nav' + (darkMode === 'dark' ? ' nav-dark' : '')}
-      onClick={handelCancel}
+      onClick={e => handelCancel(e, dispatch)}
     >
-      <div className="nav-row">
+      <div className={'nav-row' + (darkMode === 'dark' ? ' nav-row-dark' : '')}>
         <ul className="nav-list">
           {isLoggedIn
             ? <NavProfile/>

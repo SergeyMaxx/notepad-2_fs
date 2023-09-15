@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import glass from '../../icons/Glass.svg'
+import glass from '../../assets/Glass.svg'
 
 const Search = ({setSearchText}) => {
   return (

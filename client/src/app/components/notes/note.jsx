@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {addFavorites, noteDelete, removeFavorites} from '../../Store/notes'
-import trash from '../../../icons/Trash.svg'
+import trash from '../../../assets/Trash.svg'
 import NoteField from '../form/noteField'
 
 const Note = ({note}) => {

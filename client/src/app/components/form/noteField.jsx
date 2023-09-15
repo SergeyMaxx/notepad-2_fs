@@ -1,9 +1,11 @@
 import React from 'react'
-import on from '../../../icons/Gold star.svg'
-import off from '../../../icons/Star.svg'
+import on from '../../../assets/Gold-star.svg'
+import off from '../../../assets/Star.svg'
 import ModalConfirmation from '../modal/modalConfirmation'
 import {useHistory} from 'react-router-dom'
 import PropTypes from 'prop-types'
+import {useSelector} from 'react-redux'
+import {getDarkMode} from '../../Store/notes'
 
 const NoteField = ({
                      note,
@@ -16,11 +18,12 @@ const NoteField = ({
                      question,
                      textBtn
                    }) => {
+  const darkMode = useSelector(getDarkMode())
   const history = useHistory()
 
   return (
     <>
-      <div className="note-list__grid_item">
+      <div className={'note-list__grid_item' + (darkMode === 'dark' ? ' note-dark' : '')}>
         <h2 className="note-list__grid_item-header">
           {note.header}
         </h2>

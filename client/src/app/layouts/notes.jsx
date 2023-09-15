@@ -1,6 +1,6 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
-import NoteList from '../components/noteList'
+import NoteList from '../components/lists/noteList'
 import NotePage from '../components/pages/notePage'
 import NoteLayoutsField from '../components/form/noteLayoutsField'
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Button from '../button'
 
 const ModalField = ({
                       userInput,
@@ -35,7 +36,7 @@ const ModalField = ({
         className={active ? 'content content-active' : 'content'}
         onClick={e => e.stopPropagation()}
       >
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <input
             value={userInputHeader}
             onChange={handleChangeHeader}
@@ -43,7 +44,7 @@ const ModalField = ({
             className="content-header"
           />
           <small className="remaining-header">
-            {headerCharacterLimit - userInputHeader.length} Remaining
+            {userInputHeader.length} / {headerCharacterLimit}
           </small>
           <textarea
             value={userInput}
@@ -52,14 +53,9 @@ const ModalField = ({
             className="content-body"
           />
           <small className="remaining-body">
-            {characterLimit - userInput.length} Remaining
+            {userInput.length} / {characterLimit}
           </small>
-          <button
-            className="modal-button"
-            onClick={() => setActive(false)}
-          >
-            {buttonText}
-          </button>
+          <Button buttonText={buttonText} handleClick={() => setActive(false)}/>
         </form>
       </div>
     </div>

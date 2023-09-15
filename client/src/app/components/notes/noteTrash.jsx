@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {noteReturn, noteReturnAll} from '../../Store/notes'
-import restore from '../../../icons/Restore.svg'
+import restore from '../../../assets/Restore.svg'
 import NoteField from '../form/noteField'
 
 const NoteTrash = ({note}) => {
