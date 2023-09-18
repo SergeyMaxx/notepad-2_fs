@@ -17,9 +17,12 @@ const Main = () => {
   }, [darkMode])
 
   return (
-    <div className="main" onClick={e => handelCancel(e, dispatch)}>
+    <div
+      className={'main ' + (darkMode === 'dark' ? 'main-dark' : '')}
+      onClick={e => handelCancel(e, dispatch)}
+    >
       <img
-        className="main-img"
+        className={'main-img ' + (darkMode === 'dark' ? 'main-img-dark' : '')}
         onClick={() => history.push('/notes')}
         src={notepad}
         alt="notepad-logo"

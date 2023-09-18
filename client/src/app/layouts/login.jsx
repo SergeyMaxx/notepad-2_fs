@@ -5,9 +5,13 @@ import PasswordField from '../components/form/passwordField'
 import {useDispatch, useSelector} from 'react-redux'
 import {errorNull, getAuthErrors, getError, login} from '../Store/auth'
 import authService from '../services/auth.service'
+import arrow from '../../assets/Back-arrow.svg'
+import whiteArrow from '../../assets/white-arrow.svg'
+import {getDarkMode} from '../Store/notes'
 
 const Login = () => {
   const loginError = useSelector(getAuthErrors())
+  const darkMode = useSelector(getDarkMode())
   const history = useHistory()
   const dispatch = useDispatch()
   const [data, setData] = useState({
@@ -37,8 +41,13 @@ const Login = () => {
 
   return (
     <div>
-      <div className="login">
-        <i className="login__back-arrow" onClick={() => history.push('/')}/>
+      <div className={'login ' + (darkMode === 'dark' ? 'login-dark' : '')}>
+        <img
+          className="login__back-arrow"
+          src={darkMode === 'dark' ? whiteArrow : arrow}
+          onClick={() => history.push('/')}
+          alt="arrow"
+        />
         <div className="login-form">
           <form onSubmit={handleSubmit}>
             <h1 className="login-form__header">Login</h1>

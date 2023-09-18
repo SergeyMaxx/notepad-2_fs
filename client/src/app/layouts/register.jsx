@@ -6,11 +6,15 @@ import PasswordField from '../components/form/passwordField'
 import {useDispatch, useSelector} from 'react-redux'
 import {errorNull, getAuthErrors, getError, signUp} from '../Store/auth'
 import authService from '../services/auth.service'
+import {getDarkMode} from '../Store/notes'
+import arrow from '../../assets/Back-arrow.svg'
+import whiteArrow from '../../assets/white-arrow.svg'
 
 const Register = () => {
+  const signUpError = useSelector(getAuthErrors())
+  const darkMode = useSelector(getDarkMode())
   const history = useHistory()
   const dispatch = useDispatch()
-  const signUpError = useSelector(getAuthErrors())
   const [errors, setErrors] = useState({})
   const [data, setData] = useState({
     name: '',
@@ -69,8 +73,13 @@ const Register = () => {
   }
 
   return (
-    <div className="login">
-      <i className="login__back-arrow" onClick={() => history.push('/')}/>
+    <div className={'login  ' + (darkMode === 'dark' ? 'login-dark' : '')}>
+      <img
+        className="login__back-arrow"
+        src={darkMode === 'dark' ? whiteArrow : arrow}
+        onClick={() => history.push('/')}
+        alt="arrow"
+      />
       <div className="login-form">
         <form onSubmit={handleSubmit}>
           <h1 className="login-form__header register__header">Registration</h1>
@@ -86,13 +95,13 @@ const Register = () => {
           />
           {signUpError && <p className="errors errors-email">{signUpError}</p>}
           <EmailField data={data} handleChange={handleChange} _class="email"/>
-          <p className="errors errors-password">{errors.password}</p>
+          <p className="errors errors-password wd">{errors.password}</p>
           <PasswordField
             data={data}
             handleChange={handleChange}
             _class="password-register"
           />
-          <div className="login-form__block">
+          <div className="login-form__block block">
             <p className="login-form__block_account already">
               Already have account?
             </p>

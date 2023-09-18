@@ -117,7 +117,7 @@ const EditUserPage = ({active, setActive}) => {
           {dangerZone
             ?
             (
-              <form className="profile-container" onSubmit={handleDeleteAccount}>
+              <form className="profile-container column" onSubmit={handleDeleteAccount}>
                 <div>Please type your name to confirm</div>
                 <input
                   className="profile-input"

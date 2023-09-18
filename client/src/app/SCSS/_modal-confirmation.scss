@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 300px;
+  width: 287px;
   padding: 20px;
   background: #5a6251;
   border: 2px solid #dad2af;
@@ -108,10 +108,10 @@
 }
 
 .avatar-edit-wrap {
-  width: 100px;
+  width: 150px;
+  height: 38px;
   display: flex;
   justify-content: flex-end;
-  padding-right: 5px;
 }
 
 .avatar-edit-button {
@@ -223,7 +223,12 @@
 
 @media (max-width: 530px) {
   .profile-container {
-    flex-direction: column;
     row-gap: 10px;
+  }
+  .column {
+    flex-direction: column;
+  }
+  .modal-button {
+    line-height: 1;
   }
 }

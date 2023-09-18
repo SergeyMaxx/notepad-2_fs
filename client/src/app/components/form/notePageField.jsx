@@ -1,5 +1,5 @@
 import React from 'react'
-import back from '../../../assets/Back arrow.svg'
+import back from '../../../assets/Back-arrow.svg'
 import edit from '../../../assets/Edit.svg'
 import EditNoteModal from '../modal/editNoteModal'
 import {useHistory} from 'react-router-dom'
