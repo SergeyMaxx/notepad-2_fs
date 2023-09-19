@@ -13,7 +13,7 @@ const Sort = ({sort}) => {
   return (
     <div className="note-list__container_sort" onClick={changeSort}>
       <span className="note-list__container_sort-first">
-        First new
+        Newest
       </span>
       <img
         className={'sort-img-down ' + (state ? 'sort-img-up' : '')}
