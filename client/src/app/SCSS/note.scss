@@ -455,9 +455,9 @@
     }
     &_sort {
       @extend %note-list-menu;
-      min-width: 120px;
+      min-width: 90px;
       min-height: 40px;
-      padding: 0 25px;
+      padding: 0 15px;
       background: #D7D7D7;
       border: 1px solid #000;
       border-radius: 25px;
@@ -473,7 +473,6 @@
         inset 5px 5px 10px #f1f1f1;
       }
       &-first {
-        width: 88px;
         font-family: 'DM Sans', serif;
         font-style: normal;
         font-weight: 700;
@@ -1166,7 +1165,7 @@
       }
     }
     &_sort {
-      min-width: 60px;
+      min-width: 30px;
       min-height: 20px;
       padding: 0 6px;
       &:hover {
@@ -1178,7 +1177,6 @@
         inset 2px 2px 5px #f1f1f1;
       }
       &-first {
-        width: 70px;
         font-family: 'DM Sans', serif;
         font-style: normal;
         font-weight: 700;
